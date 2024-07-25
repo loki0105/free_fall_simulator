@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Free Fall</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header
+        class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"
+      >
+        <a
+          href="/"
+          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+        >
+          <svg class="bi me-2" width="40" height="32">
+            <use xlink:href="#bootstrap"></use>
+          </svg>
+          <span class="fs-4">Physics Final Project: Free Fall</span>
+        </a>
+
+        <div>
+          <input type="checkbox" class="checkbox" id="checkbox" />
+          <label for="checkbox" class="checkbox-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="ball"></span>
+          </label>
+        </div>
+      </header>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <div class="col-md-6">
+              <form id="simulation-form" class="modern-form">
+                <div class="form-group">
+                  <label for="initial_height">Initial Height (m):</label>
+                  <input
+                    type="number"
+                    id="initial_height"
+                    name="initial_height"
+                    value="50"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="launch_angle">Launch Angle (degrees):</label>
+                  <input
+                    type="number"
+                    id="launch_angle"
+                    name="launch_angle"
+                    value="30"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="initial_velocity">Initial Velocity (m/s):</label>
+                  <input
+                    type="number"
+                    id="initial_velocity"
+                    name="initial_velocity"
+                    value="10"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="air_resistance"
+                    >Air Resistance Coefficient:</label
+                  >
+                  <input
+                    type="number"
+                    id="air_resistance"
+                    name="air_resistance"
+                    value="0.01"
+                    step="0.01"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary">Simulate</button>
+                <button onclick="location.reload();" class="btn btn-primary">
+                  Reset
+                </button>
+              </form>
+            </div>
+            <div class="col-md-6 result">
+              <strong>Current Data:</strong>
+              <p id="time-info">Time: 0 s</p>
+              <p id="velocity-info">Velocity: 0 m/s</p>
+              <p id="position-info">Position: (0, 0) m</p>
+            </div>
+          </div>
+          <div id="simulation-container">
+            <canvas id="simulation-canvas"></canvas>
+            <span class="ball" id="ball"></span>
+          </div>
+          <div class="history-data">
+            <strong>Velocity History:</strong>
+            <ul id="velocity-history"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="sc.js"></script>
+  </body>
+</html>

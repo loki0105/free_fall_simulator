@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 50px;
+}
+#simulation-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  border: 1px solid black;
+  margin: 20px auto;
+  transform-origin: center;
+  transition: width 0.5s, height 0.5s;
+}
+canvas {
+  width: 100%;
+  height: 100%;
+}
+.ball {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: blue;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+#info,
+.current-data,
+.history-data {
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin: 10px;
+  overflow-y: auto;
+}
+.current-data,
+.history-data {
+  height: 200px;
+}
+.history-data {
+  height: calc(100% - 220px);
+}
+
+.btn {
+  margin: 7px 20px;
+}
+.result {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 400px;
+  margin: 0 auto;
+}
+
+/* label design */
+
+.modern-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 400px;
+  margin: 0 auto;
+}
+.modern-form .form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.modern-form .form-group label {
+  flex: 1;
+  margin-right: 10px;
+}
+.modern-form .form-group input {
+  flex: 2;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.modern-form .form-group input[type='number'] {
+  -moz-appearance: textfield;
+}
+.modern-form .form-group input::-webkit-outer-spin-button,
+.modern-form .form-group input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.modern-form .form-group input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* DARK AND LIGH MODE */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  min-height: 100vh;
+  margin: 0;
+  transition: background 0.2s linear;
+}
+
+body.dark {
+  background-color: #292c35;
+} /* #9b59b6 */
+
+body.dark h1,
+body.dark .support a {
+  color: #fff;
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: #111;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-moon {
+  color: #f1c40f;
+}
+
+.fa-sun {
+  color: #f39c12;
+}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+
+/*  Support me if you like it */
+.support {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+.support a {
+  color: #292c35;
+  font-size: 32px;
+  backface-visibility: hidden;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.support a:hover {
+  transform: scale(1.1);
+}
