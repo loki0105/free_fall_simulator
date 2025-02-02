@@ -83,7 +83,7 @@ function startSimulation(
 		previousPositions.forEach((pos) => {
 			context.lineTo(pos.x, pos.y);
 		});
-		context.strokeStyle = "blue";
+		context.strokeStyle = "black";
 		context.stroke();
 
 		// Draw highest point marker
@@ -98,7 +98,7 @@ function startSimulation(
 		// Draw ball
 		context.beginPath();
 		context.arc(x, y, ballRadius, 0, 2 * Math.PI);
-		context.fillStyle = "blue";
+		context.fillStyle = "black";
 		context.fill();
 		context.closePath();
 	}
@@ -156,8 +156,3 @@ function startSimulation(
 	animationInterval = setInterval(update, dt * 1000); // Start the animation
 }
 
-// Event listener for dark mode toggle
-const checkbox = document.getElementById("checkbox");
-checkbox.addEventListener("change", () => {
-	document.body.classList.toggle("dark"); // Toggle dark mode
-});
