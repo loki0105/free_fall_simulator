@@ -83,7 +83,7 @@ function startSimulation(
 		previousPositions.forEach((pos) => {
 			context.lineTo(pos.x, pos.y);
 		});
-		context.strokeStyle = "black";
+		context.strokeStyle = "blue";
 		context.stroke();
 
 		// Draw highest point marker
@@ -98,7 +98,7 @@ function startSimulation(
 		// Draw ball
 		context.beginPath();
 		context.arc(x, y, ballRadius, 0, 2 * Math.PI);
-		context.fillStyle = "black";
+		context.fillStyle = "blue";
 		context.fill();
 		context.closePath();
 	}
